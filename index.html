@@ -1,0 +1,38 @@
+<!--The Main Thing-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="onLoad()">
+    <div id="wrapper">
+        <div class="phone view_3" id="phone_1">
+          <iframe src="https://rilling.dev/" id="frame_1"></iframe>
+        </div>
+      </div>
+      
+      <!--Controls etc.-->
+      <div id="controls">
+        <div>
+          <label for="iframeURL">URL:</label>
+          <input type="text" id="iframeURL" placeholder="https://morrdigital.netlify.app/" value="https://morrdigital.netlify.app/" />
+        </div>
+        <div>
+            <label for="phones">Phone:</label>
+            <select name="phones" id="phones" onchange="getPhoneSelection(this)">
+                <option selected value="ip13maxpro">IP 13 Max Pro</option>
+                <option value="ip13pro">IP 13 Pro</option>
+                <option value="sgalaxy22">Samsung Galaxy S22 Ultra</option>
+              </select>
+        </div>
+      </div>
+      <div id="views">
+        <!-- <button value="1">View 1 - Laying</button> -->
+        <!-- <button value="2">View 2 - Side</button> -->
+        <button value="3">View 3 - Front</button>
+      </div>
+      <div id="linkBack" style="position:absolute;right:0px;bottom:0px;background-color:#333;margin:0;width:60px;padding:5px"><a href="http://www.f-rilling.com/projects/" target="_blank" style="font-size:14px;text-decoration:none;color:#fff;padding:0 0 0 5px;font-family:sans-serif">Creator</a></div>
+
+      <script src="scripts.js"></script>
+</body>
+</html>
