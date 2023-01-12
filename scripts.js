@@ -23,7 +23,11 @@ function updateIframe() {
     document.getElementById("iframePerspective").checked ? "1000px" : "none"
   );
 }
-//updateIframe();
+
+function updateIframeUrl() {
+  console.log("updateIframeUrl()");
+  iframe.src = document.getElementById("iframeURL").value;
+}
 
 function updateIframeByPhoneViewport(width, height) {
     iframe.src = document.getElementById("iframeURL").value;
@@ -33,13 +37,19 @@ function updateIframeByPhoneViewport(width, height) {
 }
 
 /*Events*/
-document.getElementById("controls").addEventListener("change", function() {
-  //updateIframe();
+document.getElementById("iframeURL").addEventListener("onfocusout", function() {
+  console.log('onblur:')
+  //iframe.src = document.getElementById("iframeURL").value;
 });
 
-document.getElementById("views").addEventListener("click", function(evt) {
-  updateView(evt);
+document.getElementById("controls").addEventListener("change", function() {
+  console.log('controls onchange:');
+  //iframe.src = document.getElementById("iframeURL").value;
 });
+
+// document.getElementById("views").addEventListener("click", function(evt) {
+//   updateView(evt);
+// });
 
 function getPhoneSelection(opt) {
     setViewPort(opt.value)
@@ -51,16 +61,16 @@ function setViewPort(phone)
     var height = 650;
     
     if(phone === 'ip13maxpro'){
-        width = 400;
-        height = 650;
+        width = 428;
+        height = 926;
     }
     if(phone === 'ip13pro'){
-        width = 400;
-        height = 650;
+        width = 390;
+        height = 844;
     }
     if(phone === 'sgalaxy22'){
-        width = 400;
-        height = 650;
+        width = 360;
+        height = 780;
     }
 
     console.log(`phone: ${phone} | Viewport: ${width} x ${height}`);
@@ -69,9 +79,9 @@ function setViewPort(phone)
 }
 
   function onLoad(){
+    console.log("onLoad()");
     var e = document.getElementById("phones");
     var value = e.value;
     var text = e.options[e.selectedIndex].text;
     setViewPort(text);
   }
-  
